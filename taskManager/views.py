@@ -177,7 +177,6 @@ def upload(request, project_id):
         if form.is_valid():
             name = request.POST.get('name', False)
             upload_path = store_uploaded_file(name, request.FILES['file'])
-
             #A1 - Injection (SQLi)
             curs = connection.cursor()
             curs.execute(
